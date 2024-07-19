@@ -2,7 +2,7 @@
 <sdf version="1.6">
   <world name="default">
     
-<model name="sphere">
+<model name="Sphere_0">
   <static>true</static>
   <pose>2 2 0.5 0 0 0</pose>
   <link name="link">
@@ -32,7 +32,7 @@
 </model>
 
 
-<model name="cylinder">
+<model name="Cylinder_1">
   <static>true</static>
   <pose>3 3 0.5 0 0 0</pose>
   <link name="link">
@@ -64,7 +64,7 @@
 </model>
 
 
-<model name="block">
+<model name="Box_2">
   <static>true</static>
   <pose>4 0.1 0 0 0 0</pose>
   <link name="link">
@@ -94,26 +94,86 @@
 </model>
 
 
-<model name="ellipsoid">
+<model name="Box_3">
   <static>true</static>
-  <pose>5 5 0.5 0 0 0</pose>
+  <pose>7 0.1 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
       <geometry>
-        <mesh>
-          <uri>file://media/models/ellipsoid.dae</uri>
-        </mesh>
+        <box>
+          <size>2.0 1.0 4</size>
+        </box>
       </geometry>
     </collision>
     <visual name="visual">
       <geometry>
-        <mesh>
-          <uri>file://media/models/ellipsoid.dae</uri>
-        </mesh>
+        <box>
+          <size>2.0 1.0 4</size>
+        </box>
       </geometry>
       <material>
-        <ambient>1 0 1 1</ambient>
-        <diffuse>1 0 1 1</diffuse>
+        <ambient>1 1 0 1</ambient>
+        <diffuse>1 1 0 1</diffuse>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Grey</name>
+        </script>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="Box_4">
+  <static>true</static>
+  <pose>10 0.1 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <box>
+          <size>2.0 1.0 4</size>
+        </box>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <box>
+          <size>2.0 1.0 4</size>
+        </box>
+      </geometry>
+      <material>
+        <ambient>1 1 0 1</ambient>
+        <diffuse>1 1 0 1</diffuse>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Grey</name>
+        </script>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="Box_5">
+  <static>true</static>
+  <pose>20 0.1 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <box>
+          <size>2.0 1.0 4</size>
+        </box>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <box>
+          <size>2.0 1.0 4</size>
+        </box>
+      </geometry>
+      <material>
+        <ambient>1 1 0 1</ambient>
+        <diffuse>1 1 0 1</diffuse>
         <script>
           <uri>file://media/materials/scripts/gazebo.material</uri>
           <name>Gazebo/Grey</name>
