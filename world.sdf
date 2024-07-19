@@ -1,6 +1,0 @@
-<sdf version="1.6">
-<world name="default">
-<circle radius="5" />
-<rectangle width="4" height="2" />
-</world>
-</sdf>

@@ -38,13 +38,14 @@ class World:
 
 # Example usage
 if __name__ == "__main__":
-    from shapes import Sphere, Block, Cylinder, Rectangle
+    from shapes import Sphere, Box, Cylinder
 
     world = World()
-    world.add_object(Block(1, 1, 1, 1, 1, 1))
-    world.add_object(Sphere(0.5, 2, 2, 0.5))
-    world.add_object(Cylinder(0.3, 1.0, 3, 3, 0.5))
-    world.add_object(Rectangle(2.0, 1.0, 4, 4, 0.1))
+    # world.add_object(Box(1, 1, 1, 1, 1, 1, color='1 0 0 1'))  # Red block
+    world.add_object(Sphere(0.5, 2, 2, 0.5, color='0 1 0 1'))   # Green sphere
+    world.add_object(Cylinder(0.3, 1.0, 3, 3, 0.5, color='0 0 1 1'))  # Blue cylinder
+    
+    world.add_object(Box(2.0, 1.0, 4, 4, 0.1, color='1 1 0 1')) # Yellow Box
     
     world.save_gz_world("example_world")
     print("example_world.sdf has been generated.")

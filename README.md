@@ -34,3 +34,6 @@ exporter.to_gazebo_format('world.sdf')
 ```bash
 python -m unittest discover tests
 ```
+
+
+pip install trimesh pycollada
