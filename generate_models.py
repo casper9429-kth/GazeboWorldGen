@@ -134,7 +134,7 @@ def create_cone(radius, height, name="cone", scale=[1,1,1], color='0.5 0.5 0.5 1
     write_model_sdf(name, parent_directory, dae_file, scale, color)
 
 # Create models
-create_ellipsoid(1.0, 0.5, 0.5, "ellipsoid", scale=[1, 1, 1], color='0 1 0 1')
-create_tetrahedron(1.0, 1.0, 1.5, "tetrahedron", scale=[1, 1, 1], color='1 0 0 1')
-create_square_pyramid(1.0, 1.0, 1.5, "square_pyramid", scale=[1, 1, 1], color='0 0 1 1')
-create_cone(1.0, 1.5, "cone", scale=[1, 1, 1], color='1 1 0 1')
+create_ellipsoid(1.0, 1.0, 1.0, "ellipsoid", scale=[1, 1, 1], color='1 1 1 1')
+create_tetrahedron(1.0, 1.0, 1.0, "tetrahedron", scale=[1, 1, 1], color='1 1 1 1')
+create_square_pyramid(1.0, 1.0, 1.0, "square_pyramid", scale=[1, 1, 1], color='1 1 1 1')
+create_cone(1.0, 1.0, "cone", scale=[1, 1, 1], color='1 1 1 1')

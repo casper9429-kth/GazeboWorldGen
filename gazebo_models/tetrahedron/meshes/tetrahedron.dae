@@ -1,11 +1,11 @@
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
   <asset>
-    <created>2024-07-19T21:03:55.851406</created>
-    <modified>2024-07-19T21:03:55.851410</modified>
+    <created>2024-07-19T23:56:12.284431</created>
+    <modified>2024-07-19T23:56:12.284434</modified>
     <up_axis>Y_UP</up_axis>
   </asset>
   <library_effects>
-    <effect id="28a4fde67ec04496942da67872bf3dcf" name="28a4fde67ec04496942da67872bf3dcf">
+    <effect id="a9df811108f84f58879858b075934e65" name="a9df811108f84f58879858b075934e65">
       <profile_COMMON>
         <technique sid="common">
           <phong>
@@ -47,10 +47,10 @@
     </effect>
   </library_effects>
   <library_geometries>
-    <geometry id="691be0c5d6d8407d9a9a681b1ab695b6" name="a44707ade6fd4c3ca4961a1848b9f2fd">
+    <geometry id="0d0262a4e4184b2b92f76f3ac4f0f4e0" name="628f286f68324cc79dcf6a127f4d071d">
       <mesh>
         <source id="verts-array">
-          <float_array count="12" id="verts-array-array">0 0 1.5 0.5 0.5 0 -0.5 0.5 0 0 -0.5 0</float_array>
+          <float_array count="12" id="verts-array-array">0 0 1 0.5 0.5 0 -0.5 0.5 0 0 -0.5 0</float_array>
           <technique_common>
             <accessor count="4" source="#verts-array-array" stride="3">
               <param type="float" name="X"/>
@@ -60,7 +60,7 @@
           </technique_common>
         </source>
         <source id="normals-array">
-          <float_array count="12" id="normals-array-array">0 -0.1016366 0.9948216 0.4907149 0.3311021 0.8059593 -0.4907149 0.3311021 0.8059593 -1.282872e-16 -0.6562872 0.7545112</float_array>
+          <float_array count="12" id="normals-array-array">0 -0.1382368 0.9903992 0.4086689 0.2816481 0.8681383 -0.4086689 0.2816481 0.8681383 -1.265599e-16 -0.5767588 0.8169145</float_array>
           <technique_common>
             <accessor count="4" source="#normals-array-array" stride="3">
               <param type="float" name="X"/>
@@ -81,17 +81,17 @@
     </geometry>
   </library_geometries>
   <library_materials>
-    <material id="6d8957c85d4c4f998f8034e458952c67" name="defaultmaterial">
-      <instance_effect url="#28a4fde67ec04496942da67872bf3dcf"/>
+    <material id="b15dc01a62b6439486acbff9448b837a" name="defaultmaterial">
+      <instance_effect url="#a9df811108f84f58879858b075934e65"/>
     </material>
   </library_materials>
   <library_visual_scenes>
     <visual_scene id="scene">
       <node id="node0" name="node0">
-        <instance_geometry url="#691be0c5d6d8407d9a9a681b1ab695b6">
+        <instance_geometry url="#0d0262a4e4184b2b92f76f3ac4f0f4e0">
           <bind_material>
             <technique_common>
-              <instance_material symbol="material0" target="#6d8957c85d4c4f998f8034e458952c67"/>
+              <instance_material symbol="material0" target="#b15dc01a62b6439486acbff9448b837a"/>
             </technique_common>
           </bind_material>
         </instance_geometry>
