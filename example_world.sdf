@@ -1,187 +1,431 @@
 <?xml version="1.0" ?>
-<sdf version="1.6">
+<sdf version="1.7">
   <world name="default">
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
     
-<model name="Sphere_0">
+<model name="box_2b6dc611-45b0-4706-aa47-760ece646d44">
   <static>true</static>
-  <pose>2 2 0.5 0 0 0</pose>
+  <pose>1 2 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <box>
+          <size>2 1 4</size>
+        </box>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <box>
+          <size>2 1 4</size>
+        </box>
+      </geometry>
+      <material>
+        <ambient>1 1 0 1</ambient>
+        <diffuse>1 1 0 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="sphere_d4bcb24f-ca2f-4060-89ea-f13156d4ba78">
+  <static>true</static>
+  <pose>3 4 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
       <geometry>
         <sphere>
-          <radius>0.5</radius>
+          <radius>1</radius>
         </sphere>
       </geometry>
     </collision>
     <visual name="visual">
       <geometry>
         <sphere>
-          <radius>0.5</radius>
+          <radius>1</radius>
         </sphere>
+      </geometry>
+      <material>
+        <ambient>0 1 1 1</ambient>
+        <diffuse>0 1 1 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="cylinder_bf7fd840-48f5-4aff-a3a7-7a2dadabcf3d">
+  <static>true</static>
+  <pose>5 6 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <cylinder>
+          <radius>1</radius>
+          <length>2</length>
+        </cylinder>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <cylinder>
+          <radius>1</radius>
+          <length>2</length>
+        </cylinder>
+      </geometry>
+      <material>
+        <ambient>1 0 1 1</ambient>
+        <diffuse>1 0 1 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="ellipsoid_526c8f95-9b19-45d4-bee1-e0b1599fa7ed">
+  <static>true</static>
+  <pose>7 8 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
       </geometry>
       <material>
         <ambient>0 1 0 1</ambient>
         <diffuse>0 1 0 1</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
       </material>
     </visual>
   </link>
 </model>
 
 
-<model name="Cylinder_1">
+<model name="tetrahedron_6a93708b-687c-4459-9682-6da7d837400a">
   <static>true</static>
-  <pose>3 3 0.5 0 0 0</pose>
+  <pose>9 10 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
       <geometry>
-        <cylinder>
-          <radius>0.3</radius>
-          <length>1.0</length>
-        </cylinder>
+        <mesh>
+          <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
       </geometry>
     </collision>
     <visual name="visual">
       <geometry>
-        <cylinder>
-          <radius>0.3</radius>
-          <length>1.0</length>
-        </cylinder>
+        <mesh>
+          <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>1 0 0 1</ambient>
+        <diffuse>1 0 0 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="squarepyramid_947606c0-d331-471f-bc8f-0739c6c8f687">
+  <static>true</static>
+  <pose>11 12 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
       </geometry>
       <material>
         <ambient>0 0 1 1</ambient>
         <diffuse>0 0 1 1</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
       </material>
     </visual>
   </link>
 </model>
 
 
-<model name="Box_2">
+<model name="cone_78981d1c-f750-4834-b1a5-ea3f265a79f1">
   <static>true</static>
-  <pose>4 0.1 0 0 0 0</pose>
+  <pose>13 14 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://cone/meshes/cone.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://cone/meshes/cone.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>1 1 0 1</ambient>
+        <diffuse>1 1 0 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="box_c3b767c6-684c-46fc-bff0-b19cb466e598">
+  <static>true</static>
+  <pose>1 2 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
       <geometry>
         <box>
-          <size>2.0 1.0 4</size>
+          <size>2 1 4</size>
         </box>
       </geometry>
     </collision>
     <visual name="visual">
       <geometry>
         <box>
-          <size>2.0 1.0 4</size>
+          <size>2 1 4</size>
         </box>
       </geometry>
       <material>
         <ambient>1 1 0 1</ambient>
         <diffuse>1 1 0 1</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
       </material>
     </visual>
   </link>
 </model>
 
 
-<model name="Box_3">
+<model name="sphere_dbb35425-7cf0-4f22-9935-acec1ccdeb54">
   <static>true</static>
-  <pose>7 0.1 0 0 0 0</pose>
+  <pose>3 4 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
       <geometry>
-        <box>
-          <size>2.0 1.0 4</size>
-        </box>
+        <sphere>
+          <radius>1</radius>
+        </sphere>
       </geometry>
     </collision>
     <visual name="visual">
       <geometry>
-        <box>
-          <size>2.0 1.0 4</size>
-        </box>
+        <sphere>
+          <radius>1</radius>
+        </sphere>
       </geometry>
       <material>
-        <ambient>1 1 0 1</ambient>
-        <diffuse>1 1 0 1</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
+        <ambient>0 1 1 1</ambient>
+        <diffuse>0 1 1 1</diffuse>
       </material>
     </visual>
   </link>
 </model>
 
 
-<model name="Box_4">
+<model name="cylinder_5dd63ecb-08e6-4d24-8307-d2fa0c27b02f">
   <static>true</static>
-  <pose>10 0.1 0 0 0 0</pose>
+  <pose>5 6 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
       <geometry>
-        <box>
-          <size>2.0 1.0 4</size>
-        </box>
+        <cylinder>
+          <radius>1</radius>
+          <length>2</length>
+        </cylinder>
       </geometry>
     </collision>
     <visual name="visual">
       <geometry>
-        <box>
-          <size>2.0 1.0 4</size>
-        </box>
+        <cylinder>
+          <radius>1</radius>
+          <length>2</length>
+        </cylinder>
       </geometry>
       <material>
-        <ambient>1 1 0 1</ambient>
-        <diffuse>1 1 0 1</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
+        <ambient>1 0 1 1</ambient>
+        <diffuse>1 0 1 1</diffuse>
       </material>
     </visual>
   </link>
 </model>
 
 
-<model name="Box_5">
+<model name="ellipsoid_b3b3d4db-d5ab-4b94-b71e-1405d3f526f7">
   <static>true</static>
-  <pose>20 0.1 0 0 0 0</pose>
+  <pose>7 8 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
       <geometry>
-        <box>
-          <size>2.0 1.0 4</size>
-        </box>
+        <mesh>
+          <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
       </geometry>
     </collision>
     <visual name="visual">
       <geometry>
-        <box>
-          <size>2.0 1.0 4</size>
-        </box>
+        <mesh>
+          <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
       </geometry>
       <material>
-        <ambient>1 1 0 1</ambient>
-        <diffuse>1 1 0 1</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
+        <ambient>0 1 0 1</ambient>
+        <diffuse>0 1 0 1</diffuse>
       </material>
     </visual>
   </link>
 </model>
 
+
+<model name="tetrahedron_c59deab9-784c-43dd-a48f-00a22dfedb79">
+  <static>true</static>
+  <pose>9 10 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>1 0 0 1</ambient>
+        <diffuse>1 0 0 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="squarepyramid_33d94a05-c044-4b93-bef9-eeadb4ecca8c">
+  <static>true</static>
+  <pose>11 12 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>0 0 1 1</ambient>
+        <diffuse>0 0 1 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+
+<model name="cone_4cb7c2af-673e-47d5-9e3c-62ed2e46e3a3">
+  <static>true</static>
+  <pose>18 14 0 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://cone/meshes/cone.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://cone/meshes/cone.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>0 1 0 1</ambient>
+        <diffuse>0 1 0 1</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
   </world>
 </sdf>

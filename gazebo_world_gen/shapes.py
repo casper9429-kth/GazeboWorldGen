@@ -1,16 +1,17 @@
-# gazebo_world_gen/shapes.py
+# shapes.py
+import uuid
 
 class Shape:
-    _id_counter = 0  # Class-level counter to track shape instances
-
-    def __init__(self, x, y, z=0, color='0.5 0.5 0.5 1.0'):
+    def __init__(self, x=0, y=0, z=0, color='0.5 0.5 0.5 1.0'):
         self.x = x
         self.y = y
         self.z = z
         self.color = color
-        self.id = Shape._id_counter  # Assign unique ID to the shape
-        Shape._id_counter += 1  # Increment the counter for the next shape
-        self.name = f"{self.__class__.__name__}_{self.id}"  # Generate unique name
+        self.name = self.__class__.__name__.lower() + '_' + str(uuid.uuid4())
+
+    def get_gz_xml(self):
+        raise NotImplementedError("This method should be overridden by subclasses")
+
 
 class Box(Shape):
     def __init__(self, width, height, depth, x=0, y=0, z=0, color='0.5 0.5 0.5 1.0'):
@@ -42,15 +43,12 @@ class Box(Shape):
       <material>
         <ambient>{self.color}</ambient>
         <diffuse>{self.color}</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
       </material>
     </visual>
   </link>
 </model>
 """
+
 
 class Sphere(Shape):
     def __init__(self, radius, x=0, y=0, z=0, color='0.5 0.5 0.5 1.0'):
@@ -80,15 +78,12 @@ class Sphere(Shape):
       <material>
         <ambient>{self.color}</ambient>
         <diffuse>{self.color}</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
       </material>
     </visual>
   </link>
 </model>
 """
+
 
 class Cylinder(Shape):
     def __init__(self, radius, length, x=0, y=0, z=0, color='0.5 0.5 0.5 1.0'):
@@ -121,10 +116,161 @@ class Cylinder(Shape):
       <material>
         <ambient>{self.color}</ambient>
         <diffuse>{self.color}</diffuse>
-        <script>
-          <uri>file://media/materials/scripts/gazebo.material</uri>
-          <name>Gazebo/Grey</name>
-        </script>
+      </material>
+    </visual>
+  </link>
+</model>
+"""
+
+
+class Ellipsoid(Shape):
+    def __init__(self, radius_x, radius_y, radius_z, x=0, y=0, z=0, color='0.5 0.5 0.5 1.0'):
+        super().__init__(x, y, z, color)
+        self.radius_x = radius_x
+        self.radius_y = radius_y
+        self.radius_z = radius_z
+        self.type = "Ellipsoid"
+
+    def get_gz_xml(self):
+        return f"""
+<model name="{self.name}">
+  <static>true</static>
+  <pose>{self.x} {self.y} {self.z} 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>{self.color}</ambient>
+        <diffuse>{self.color}</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+"""
+
+
+class Tetrahedron(Shape):
+    def __init__(self, width, depth, height, x=0, y=0, z=0, color='0.5 0.5 0.5 1.0'):
+        super().__init__(x, y, z, color)
+        self.width = width
+        self.depth = depth
+        self.height = height
+        self.type = "Tetrahedron"
+
+    def get_gz_xml(self):
+        return f"""
+<model name="{self.name}">
+  <static>true</static>
+  <pose>{self.x} {self.y} {self.z} 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>{self.color}</ambient>
+        <diffuse>{self.color}</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+"""
+
+
+class SquarePyramid(Shape):
+    def __init__(self, width, depth, height, x=0, y=0, z=0, color='0.5 0.5 0.5 1.0'):
+        super().__init__(x, y, z, color)
+        self.width = width
+        self.depth = depth
+        self.height = height
+        self.type = "SquarePyramid"
+
+    def get_gz_xml(self):
+        return f"""
+<model name="{self.name}">
+  <static>true</static>
+  <pose>{self.x} {self.y} {self.z} 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>{self.color}</ambient>
+        <diffuse>{self.color}</diffuse>
+      </material>
+    </visual>
+  </link>
+</model>
+"""
+
+
+class Cone(Shape):
+    def __init__(self, radius, height, x=0, y=0, z=0, color='0.5 0.5 0.5 1.0'):
+        super().__init__(x, y, z, color)
+        self.radius = radius
+        self.height = height
+        self.type = "Cone"
+
+    def get_gz_xml(self):
+        return f"""
+<model name="{self.name}">
+  <static>true</static>
+  <pose>{self.x} {self.y} {self.z} 0 0 0</pose>
+  <link name="link">
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://cone/meshes/cone.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://cone/meshes/cone.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+      <material>
+        <ambient>{self.color}</ambient>
+        <diffuse>{self.color}</diffuse>
       </material>
     </visual>
   </link>
