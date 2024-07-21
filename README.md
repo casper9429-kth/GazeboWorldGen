@@ -1,39 +1,16 @@
 # GazeboWorldGen
 
-GazeboWorldGen is a Python library for generating Gazebo worlds. It supports creating various shapes, handling height maps, and exporting worlds to Gazebo-compatible formats.
+GazeboWorldGen is a library for generating Gazebo worlds through few lines of python code. It is a work in progress and is not yet ready for use.
 
-## Installation
+The goal of this project is to provide a fast way to generate Gazebo worlds for robotics simulations. 
 
-```bash
-pip install .
-```
-
-## Usage
-
-```python
-from gazebo_world_gen.world import World
-from gazebo_world_gen.shapes import Circle, Rectangle
-from gazebo_world_gen.export import Exporter
-
-# Create a new world
-world = World()
-
-# Add objects to the world
-circle = Circle(radius=5, x=10, y=10)
-rectangle = Rectangle(width=4, height=2, x=20, y=20)
-world.add_object(circle)
-world.add_object(rectangle)
-
-# Export the world to Gazebo format
-exporter = Exporter(world)
-exporter.to_gazebo_format('world.sdf')
-```
-
-## Running Tests
-
-```bash
-python -m unittest discover tests
-```
-
-
-pip install trimesh pycollada
+## TODO
+  - [x] Ad a few basic shapes
+  - [x] Add world parameters, such as gravity etc.
+  - [ ] Be able to add terrain to the world through heightmaps created by the user as numpy arrays
+  - [ ] Add a collison sahpe of the actual objects in the world, not only the visual shape
+  - [ ] Be able to give properties to the objects in the world, like friction, mass, follow gravity, follow terrain or a path, etc. Might be revisited multiple times.
+  - [ ] Be able to cluster object in the world, through a subclass. That can rotate and move together.
+  - [ ] Give the object more advanced colors, like textures or materials or even animations, being a light source, etc.
+  - [ ] Add support to fly simulated drones in the world, either through ROS or ardupilot, px4, etc. maybe all of them
+  - [ ] Add support for adding sensors in the world.
