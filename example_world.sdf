@@ -20,23 +20,27 @@
       </spot>
     </light>
     
-<model name="box_2b6dc611-45b0-4706-aa47-760ece646d44">
+<model name="box_53bc516d-0481-46e4-b9f9-00f084216e3f">
   <static>true</static>
   <pose>1 2 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <box>
           <size>2 1 4</size>
         </box>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <box>
           <size>2 1 4</size>
         </box>
       </geometry>
+
       <material>
         <ambient>1 1 0 1</ambient>
         <diffuse>1 1 0 1</diffuse>
@@ -46,23 +50,27 @@
 </model>
 
 
-<model name="sphere_d4bcb24f-ca2f-4060-89ea-f13156d4ba78">
+<model name="sphere_2a4bc1d4-2337-4a00-8559-d58b07b4abee">
   <static>true</static>
   <pose>3 4 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <sphere>
           <radius>1</radius>
         </sphere>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <sphere>
           <radius>1</radius>
         </sphere>
       </geometry>
+
       <material>
         <ambient>0 1 1 1</ambient>
         <diffuse>0 1 1 1</diffuse>
@@ -72,25 +80,29 @@
 </model>
 
 
-<model name="cylinder_bf7fd840-48f5-4aff-a3a7-7a2dadabcf3d">
+<model name="cylinder_e4beef03-f921-4a8c-af77-417b95a26c5d">
   <static>true</static>
   <pose>5 6 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <cylinder>
           <radius>1</radius>
           <length>2</length>
         </cylinder>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <cylinder>
           <radius>1</radius>
           <length>2</length>
         </cylinder>
       </geometry>
+
       <material>
         <ambient>1 0 1 1</ambient>
         <diffuse>1 0 1 1</diffuse>
@@ -100,25 +112,29 @@
 </model>
 
 
-<model name="ellipsoid_526c8f95-9b19-45d4-bee1-e0b1599fa7ed">
+<model name="ellipsoid_23d271ee-e2e5-49f6-b880-e6bd6ce4118c">
   <static>true</static>
   <pose>7 8 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <mesh>
           <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <mesh>
           <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
       <material>
         <ambient>0 1 0 1</ambient>
         <diffuse>0 1 0 1</diffuse>
@@ -128,25 +144,29 @@
 </model>
 
 
-<model name="tetrahedron_6a93708b-687c-4459-9682-6da7d837400a">
+<model name="tetrahedron_8b105880-f782-48f1-bf8b-6b7b43da3b6c">
   <static>true</static>
   <pose>9 10 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <mesh>
           <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <mesh>
           <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
       <material>
         <ambient>1 0 0 1</ambient>
         <diffuse>1 0 0 1</diffuse>
@@ -156,25 +176,29 @@
 </model>
 
 
-<model name="squarepyramid_947606c0-d331-471f-bc8f-0739c6c8f687">
+<model name="squarepyramid_c3aeb9f4-dd0e-42bf-8180-7ef36154610b">
   <static>true</static>
   <pose>11 12 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <mesh>
           <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <mesh>
           <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
       <material>
         <ambient>0 0 1 1</ambient>
         <diffuse>0 0 1 1</diffuse>
@@ -184,25 +208,29 @@
 </model>
 
 
-<model name="cone_78981d1c-f750-4834-b1a5-ea3f265a79f1">
+<model name="cone_0c1a6ac0-ab91-4c0c-8c0d-4de96a7c7d85">
   <static>true</static>
   <pose>13 14 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <mesh>
           <uri>model://cone/meshes/cone.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <mesh>
           <uri>model://cone/meshes/cone.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
       <material>
         <ambient>1 1 0 1</ambient>
         <diffuse>1 1 0 1</diffuse>
@@ -212,23 +240,27 @@
 </model>
 
 
-<model name="box_c3b767c6-684c-46fc-bff0-b19cb466e598">
+<model name="box_a1b5d719-3a38-488d-a795-06dd70b18ae0">
   <static>true</static>
   <pose>1 2 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <box>
           <size>2 1 4</size>
         </box>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <box>
           <size>2 1 4</size>
         </box>
       </geometry>
+
       <material>
         <ambient>1 1 0 1</ambient>
         <diffuse>1 1 0 1</diffuse>
@@ -238,23 +270,27 @@
 </model>
 
 
-<model name="sphere_dbb35425-7cf0-4f22-9935-acec1ccdeb54">
+<model name="sphere_87cf3aca-e217-4f0e-8fa0-d378aef18f4e">
   <static>true</static>
   <pose>3 4 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <sphere>
           <radius>1</radius>
         </sphere>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <sphere>
           <radius>1</radius>
         </sphere>
       </geometry>
+
       <material>
         <ambient>0 1 1 1</ambient>
         <diffuse>0 1 1 1</diffuse>
@@ -264,25 +300,29 @@
 </model>
 
 
-<model name="cylinder_5dd63ecb-08e6-4d24-8307-d2fa0c27b02f">
+<model name="cylinder_f1d41f9f-2bca-4529-a57e-52d827ce7950">
   <static>true</static>
   <pose>5 6 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <cylinder>
           <radius>1</radius>
           <length>2</length>
         </cylinder>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <cylinder>
           <radius>1</radius>
           <length>2</length>
         </cylinder>
       </geometry>
+
       <material>
         <ambient>1 0 1 1</ambient>
         <diffuse>1 0 1 1</diffuse>
@@ -292,25 +332,29 @@
 </model>
 
 
-<model name="ellipsoid_b3b3d4db-d5ab-4b94-b71e-1405d3f526f7">
+<model name="ellipsoid_e7e2217e-480b-465e-943f-5f9a2e2add98">
   <static>true</static>
   <pose>7 8 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <mesh>
           <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <mesh>
           <uri>model://ellipsoid/meshes/ellipsoid.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
       <material>
         <ambient>0 1 0 1</ambient>
         <diffuse>0 1 0 1</diffuse>
@@ -320,25 +364,29 @@
 </model>
 
 
-<model name="tetrahedron_c59deab9-784c-43dd-a48f-00a22dfedb79">
+<model name="tetrahedron_72d27c4f-02b5-474c-9a79-daa518c6f6e2">
   <static>true</static>
   <pose>9 10 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <mesh>
           <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <mesh>
           <uri>model://tetrahedron/meshes/tetrahedron.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
       <material>
         <ambient>1 0 0 1</ambient>
         <diffuse>1 0 0 1</diffuse>
@@ -348,25 +396,29 @@
 </model>
 
 
-<model name="squarepyramid_33d94a05-c044-4b93-bef9-eeadb4ecca8c">
+<model name="squarepyramid_e02473a6-8e92-4b81-83d0-a598c39ab2fb">
   <static>true</static>
   <pose>11 12 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <mesh>
           <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <mesh>
           <uri>model://square_pyramid/meshes/square_pyramid.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
       <material>
         <ambient>0 0 1 1</ambient>
         <diffuse>0 0 1 1</diffuse>
@@ -376,25 +428,29 @@
 </model>
 
 
-<model name="cone_4cb7c2af-673e-47d5-9e3c-62ed2e46e3a3">
+<model name="cone_db88934b-52b3-41b6-b0c4-578ad0751a60">
   <static>true</static>
   <pose>18 14 0 0 0 0</pose>
   <link name="link">
     <collision name="collision">
+      
       <geometry>
         <mesh>
           <uri>model://cone/meshes/cone.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
     </collision>
     <visual name="visual">
+      
       <geometry>
         <mesh>
           <uri>model://cone/meshes/cone.dae</uri>
           <scale>1 1 1</scale>
         </mesh>
       </geometry>
+
       <material>
         <ambient>0 1 0 1</ambient>
         <diffuse>0 1 0 1</diffuse>
